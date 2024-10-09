@@ -1,12 +1,21 @@
-'use client'
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Bird, Mail, MapPin, Phone, Cloud, Feather, Music, Palette } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Bird,
+  Mail,
+  MapPin,
+  Phone,
+  Cloud,
+  Feather,
+  Music,
+  Palette,
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export function CreativeLandingPageComponent() {
   return (
@@ -15,17 +24,24 @@ export function CreativeLandingPageComponent() {
         <div className="container mx-auto flex justify-between items-center">
           <Link href="/" className="flex items-center space-x-2">
             <Bird className="h-8 w-8 text-sky-500" />
-            <span className="text-2xl font-bold text-sky-700">Little Birds Day Home</span>
+            <span className="text-2xl font-bold text-sky-700">
+              Little Birds Day Home
+            </span>
           </Link>
           <nav>
             <ul className="flex space-x-6">
-              {["Nest", "Adventures", "Chirps", "Contact"].map((item, index) => (
-                <li key={index}>
-                  <Link href={`#${item.toLowerCase()}`} className="text-sky-600 hover:text-sky-800 transition-colors duration-200 text-lg font-medium">
-                    {item}
-                  </Link>
-                </li>
-              ))}
+              {["Nest", "Adventures", "Chirps", "Contact"].map(
+                (item, index) => (
+                  <li key={index}>
+                    <Link
+                      href={`#${item.toLowerCase()}`}
+                      className="text-sky-600 hover:text-sky-800 transition-colors duration-200 text-lg font-medium"
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                )
+              )}
             </ul>
           </nav>
         </div>
@@ -34,9 +50,16 @@ export function CreativeLandingPageComponent() {
       <main className="flex-grow">
         <section className="py-20 relative overflow-hidden">
           <div className="container mx-auto text-center relative z-10">
-            <h1 className="text-5xl font-bold mb-4 text-sky-800">Welcome to Our Magical Nest</h1>
-            <p className="text-2xl mb-8 text-sky-600">Where Imagination Takes Flight!</p>
-            <Button asChild className="bg-amber-400 hover:bg-amber-500 text-sky-900 font-bold py-3 px-6 rounded-full text-xl shadow-lg transition-all duration-200 hover:shadow-xl hover:-translate-y-1">
+            <h1 className="text-5xl font-bold mb-4 text-sky-800">
+              Welcome to Our Magical Nest
+            </h1>
+            <p className="text-2xl mb-8 text-sky-600">
+              Where Imagination Takes Flight!
+            </p>
+            <Button
+              asChild
+              className="bg-amber-400 hover:bg-amber-500 text-sky-900 font-bold py-3 px-6 rounded-full text-xl shadow-lg transition-all duration-200 hover:shadow-xl hover:-translate-y-1"
+            >
               <Link href="#contact">Start Your Adventure</Link>
             </Button>
           </div>
@@ -48,13 +71,19 @@ export function CreativeLandingPageComponent() {
           </div>
         </section>
 
-        <section id="nest" className="py-16 bg-gradient-to-r from-sky-100 to-white rounded-3xl mx-4 my-8 shadow-inner">
+        <section
+          id="nest"
+          className="py-16 bg-gradient-to-r from-sky-100 to-white rounded-3xl mx-4 my-8 shadow-inner"
+        >
           <div className="container mx-auto">
-            <h2 className="text-4xl font-bold mb-8 text-center text-sky-800">Our Cozy Nest</h2>
+            <h2 className="text-4xl font-bold mb-8 text-center text-sky-800">
+              Our Cozy Nest
+            </h2>
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6 text-lg text-sky-700">
                 <p>
-                  At Little Birds Day Home, we've created a magical world where:
+                  At Little Birds Day Home, we&apos;ve created a magical world
+                  where:
                 </p>
                 <ul className="space-y-4">
                   <li className="flex items-center">
@@ -67,11 +96,12 @@ export function CreativeLandingPageComponent() {
                   </li>
                   <li className="flex items-center">
                     <Feather className="h-6 w-6 mr-2 text-amber-400" />
-                    Every child's uniqueness is celebrated
+                    Every child&apos;s uniqueness is celebrated
                   </li>
                 </ul>
                 <p>
-                  Join us in a nest where learning feels like play and every day brings new wonders!
+                  Join us in a nest where learning feels like play and every day
+                  brings new wonders!
                 </p>
               </div>
               <div className="relative h-80 rounded-2xl overflow-hidden shadow-2xl transform -rotate-2">
@@ -89,32 +119,42 @@ export function CreativeLandingPageComponent() {
 
         <section id="adventures" className="py-16">
           <div className="container mx-auto">
-            <h2 className="text-4xl font-bold mb-12 text-center text-sky-800">Daily Adventures</h2>
+            <h2 className="text-4xl font-bold mb-12 text-center text-sky-800">
+              Daily Adventures
+            </h2>
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
                   title: "Curious Caterpillars",
                   age: "18 months - 3 years",
-                  description: "A gentle introduction to the world of wonder and discovery.",
-                  icon: "🐛"
+                  description:
+                    "A gentle introduction to the world of wonder and discovery.",
+                  icon: "🐛",
                 },
                 {
                   title: "Playful Puffins",
                   age: "3 - 5 years",
-                  description: "Where imagination and learning create colorful journeys.",
-                  icon: "🐧"
+                  description:
+                    "Where imagination and learning create colorful journeys.",
+                  icon: "🐧",
                 },
                 {
                   title: "Soaring Eagles",
                   age: "5 - 12 years",
-                  description: "After-school adventures that challenge and inspire.",
-                  icon: "🦅"
-                }
+                  description:
+                    "After-school adventures that challenge and inspire.",
+                  icon: "🦅",
+                },
               ].map((program, index) => (
-                <Card key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all hover:scale-105 hover:shadow-xl">
+                <Card
+                  key={index}
+                  className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all hover:scale-105 hover:shadow-xl"
+                >
                   <CardContent className="p-6">
                     <div className="text-5xl mb-4">{program.icon}</div>
-                    <h3 className="text-2xl font-bold mb-2 text-sky-700">{program.title}</h3>
+                    <h3 className="text-2xl font-bold mb-2 text-sky-700">
+                      {program.title}
+                    </h3>
                     <p className="text-sm text-sky-500 mb-4">{program.age}</p>
                     <p className="text-sky-600">{program.description}</p>
                   </CardContent>
@@ -124,27 +164,41 @@ export function CreativeLandingPageComponent() {
           </div>
         </section>
 
-        <section id="chirps" className="py-16 bg-gradient-to-l from-amber-50 to-white rounded-3xl mx-4 my-8 shadow-inner">
+        <section
+          id="chirps"
+          className="py-16 bg-gradient-to-l from-amber-50 to-white rounded-3xl mx-4 my-8 shadow-inner"
+        >
           <div className="container mx-auto">
-            <h2 className="text-4xl font-bold mb-12 text-center text-sky-800">Happy Chirps</h2>
+            <h2 className="text-4xl font-bold mb-12 text-center text-sky-800">
+              Happy Chirps
+            </h2>
             <div className="grid md:grid-cols-2 gap-8">
               {[
                 {
-                  quote: "Little Birds has become our daughter's favorite place! The creativity and care are truly magical.",
-                  author: "Sarah, Hummingbird Mom"
+                  quote:
+                    "Little Birds has become our daughter's favorite place! The creativity and care are truly magical.",
+                  author: "Sarah, Hummingbird Mom",
                 },
                 {
-                  quote: "As working parents, we couldn't ask for a better 'home away from home' for our son. He's thriving!",
-                  author: "Mark & Lisa, Owl Parents"
-                }
+                  quote:
+                    "As working parents, we couldn't ask for a better 'home away from home' for our son. He's thriving!",
+                  author: "Mark & Lisa, Owl Parents",
+                },
               ].map((testimonial, index) => (
-                <Card key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <Card
+                  key={index}
+                  className="bg-white rounded-2xl shadow-lg overflow-hidden"
+                >
                   <CardContent className="p-6 flex flex-col h-full">
                     <div className="flex-grow">
                       <Bird className="h-8 w-8 text-amber-400 mb-4" />
-                      <p className="mb-4 italic text-lg text-sky-700">"{testimonial.quote}"</p>
+                      <p className="mb-4 italic text-lg text-sky-700">
+                        &quot;{testimonial.quote}&quot;
+                      </p>
                     </div>
-                    <p className="text-right font-medium text-sky-600">- {testimonial.author}</p>
+                    <p className="text-right font-medium text-sky-600">
+                      - {testimonial.author}
+                    </p>
                   </CardContent>
                 </Card>
               ))}
@@ -152,24 +206,52 @@ export function CreativeLandingPageComponent() {
           </div>
         </section>
 
-        <section id="contact" className="py-16 bg-white rounded-3xl mx-4 my-8 shadow-lg">
+        <section
+          id="contact"
+          className="py-16 bg-white rounded-3xl mx-4 my-8 shadow-lg"
+        >
           <div className="container mx-auto">
-            <h2 className="text-4xl font-bold mb-12 text-center text-sky-800">Let's Connect</h2>
+            <h2 className="text-4xl font-bold mb-12 text-center text-sky-800">
+              Let&apos;s Connect
+            </h2>
             <div className="grid md:grid-cols-2 gap-12">
               <div>
-                <h3 className="text-2xl font-bold mb-6 text-sky-700">Send Us a Friendly Tweet</h3>
+                <h3 className="text-2xl font-bold mb-6 text-sky-700">
+                  Send Us a Friendly Tweet
+                </h3>
                 <form className="space-y-6">
-                  <Input type="text" placeholder="Your Name" className="rounded-full border-sky-200 focus:border-amber-400 focus:ring-amber-400" />
-                  <Input type="email" placeholder="Your Email" className="rounded-full border-sky-200 focus:border-amber-400 focus:ring-amber-400" />
-                  <Input type="tel" placeholder="Your Phone" className="rounded-full border-sky-200 focus:border-amber-400 focus:ring-amber-400" />
-                  <Textarea placeholder="Your Message" className="rounded-2xl border-sky-200 focus:border-amber-400 focus:ring-amber-400" rows={4} />
-                  <Button type="submit" className="bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-6 rounded-full w-full transition-colors duration-200">
+                  <Input
+                    type="text"
+                    placeholder="Your Name"
+                    className="rounded-full border-sky-200 focus:border-amber-400 focus:ring-amber-400"
+                  />
+                  <Input
+                    type="email"
+                    placeholder="Your Email"
+                    className="rounded-full border-sky-200 focus:border-amber-400 focus:ring-amber-400"
+                  />
+                  <Input
+                    type="tel"
+                    placeholder="Your Phone"
+                    className="rounded-full border-sky-200 focus:border-amber-400 focus:ring-amber-400"
+                  />
+                  <Textarea
+                    placeholder="Your Message"
+                    className="rounded-2xl border-sky-200 focus:border-amber-400 focus:ring-amber-400"
+                    rows={4}
+                  />
+                  <Button
+                    type="submit"
+                    className="bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-6 rounded-full w-full transition-colors duration-200"
+                  >
                     Send Your Tweet
                   </Button>
                 </form>
               </div>
               <div>
-                <h3 className="text-2xl font-bold mb-6 text-sky-700">Visit Our Treehouse</h3>
+                <h3 className="text-2xl font-bold mb-6 text-sky-700">
+                  Visit Our Treehouse
+                </h3>
                 <address className="not-italic space-y-4 text-lg text-sky-600">
                   <p className="flex items-center">
                     <MapPin className="mr-3 h-6 w-6 text-amber-400" />
@@ -200,13 +282,21 @@ export function CreativeLandingPageComponent() {
 
       <footer className="bg-sky-800 text-white py-8 rounded-t-3xl">
         <div className="container mx-auto text-center">
-          <p className="text-lg mb-2">&copy; {new Date().getFullYear()} Little Birds Day Home. All rights reserved.</p>
+          <p className="text-lg mb-2">
+            &copy; {new Date().getFullYear()} Little Birds Day Home. All rights
+            reserved.
+          </p>
           <p className="text-sm text-sky-300">
-            <Link href="/privacy" className="hover:underline">Privacy Nest</Link> | 
-            <Link href="/terms" className="hover:underline ml-2">Treehouse Rules</Link>
+            <Link href="/privacy" className="hover:underline">
+              Privacy Nest
+            </Link>{" "}
+            |
+            <Link href="/terms" className="hover:underline ml-2">
+              Treehouse Rules
+            </Link>
           </p>
         </div>
       </footer>
     </div>
-  )
+  );
 }
