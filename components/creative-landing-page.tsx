@@ -1,4 +1,5 @@
 "use client";
+import React, { useEffect, useState, useCallback } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -13,11 +14,82 @@ import {
   Feather,
   Music,
   Palette,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
+
 import Image from "next/image";
 import Link from "next/link";
+import kidsPlaying from "@/app/images/kids.jpeg";
+import useEmblaCarousel from "embla-carousel-react";
 
 export function CreativeLandingPageComponent() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: "center",
+    slidesToScroll: 1,
+  });
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  // eslint-disable-next-line
+  const [scrollSnaps, setScrollSnaps] = useState<any>([]);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi, setSelectedIndex]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    onSelect();
+    setScrollSnaps(emblaApi.scrollSnapList());
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
+
+    const interval = setInterval(() => {
+      emblaApi.scrollNext();
+    }, 5000); // Auto-slide every 5 seconds
+
+    return () => {
+      clearInterval(interval);
+      emblaApi.off("select", onSelect);
+      emblaApi.off("reInit", onSelect);
+    };
+  }, [emblaApi, onSelect]);
+
+  const reviews = [
+    {
+      quote:
+        "Little Birds has become our daughter's favorite place! The creativity and care are truly magical.",
+      author: "Sarah, Hummingbird Mom",
+    },
+    {
+      quote:
+        "As working parents, we couldn't ask for a better 'home away from home' for our son. He's thriving!",
+      author: "Mark & Lisa, Owl Parents",
+    },
+    {
+      quote:
+        "The staff's dedication to nurturing each child's unique talents is impressive. Our little one has blossomed!",
+      author: "Emily, Robin Mom",
+    },
+    {
+      quote:
+        "The themed learning activities are so engaging. Our twins can't wait for their Little Birds adventures each day!",
+      author: "David, Sparrow Dad",
+    },
+    {
+      quote:
+        "We love how the program balances fun and education. It's the perfect nest for curious minds to grow.",
+      author: "Sophia, Bluebird Mom",
+    },
+    {
+      quote:
+        "The sense of community at Little Birds is wonderful. It feels like one big, happy flock!",
+      author: "James, Cardinal Dad",
+    },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-b from-sky-50 to-white">
       <header className="bg-white py-4 shadow-sm">
@@ -106,7 +178,7 @@ export function CreativeLandingPageComponent() {
               </div>
               <div className="relative h-80 rounded-2xl overflow-hidden shadow-2xl transform -rotate-2">
                 <Image
-                  src="/placeholder.svg?height=400&width=600"
+                  src={kidsPlaying}
                   alt="Magical treehouse classroom"
                   layout="fill"
                   objectFit="cover"
@@ -166,41 +238,75 @@ export function CreativeLandingPageComponent() {
 
         <section
           id="chirps"
-          className="py-16 bg-gradient-to-l from-amber-50 to-white rounded-3xl mx-4 my-8 shadow-inner"
+          className="py-16 bg-gradient-to-r from-amber-100 to-sky-100 rounded-3xl mx-4 my-8 shadow-lg"
         >
           <div className="container mx-auto">
             <h2 className="text-4xl font-bold mb-12 text-center text-sky-800">
               Happy Chirps
             </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {[
-                {
-                  quote:
-                    "Little Birds has become our daughter's favorite place! The creativity and care are truly magical.",
-                  author: "Sarah, Hummingbird Mom",
-                },
-                {
-                  quote:
-                    "As working parents, we couldn't ask for a better 'home away from home' for our son. He's thriving!",
-                  author: "Mark & Lisa, Owl Parents",
-                },
-              ].map((testimonial, index) => (
-                <Card
-                  key={index}
-                  className="bg-white rounded-2xl shadow-lg overflow-hidden"
-                >
-                  <CardContent className="p-6 flex flex-col h-full">
-                    <div className="flex-grow">
-                      <Bird className="h-8 w-8 text-amber-400 mb-4" />
-                      <p className="mb-4 italic text-lg text-sky-700">
-                        &quot;{testimonial.quote}&quot;
-                      </p>
+            <div className="relative max-w-7xl mx-auto">
+              <div className="overflow-hidden" ref={emblaRef}>
+                <div className="flex -ml-4">
+                  {reviews.map((review, index) => (
+                    <div
+                      key={index}
+                      className="flex-[0_0_100%] md:flex-[0_0_33.33%] min-w-0 pl-4 pt-8"
+                    >
+                      <div
+                        className="transition-all duration-300 ease-in-out transform md:hover:scale-105"
+                        style={{
+                          transform: `scale(${
+                            index === selectedIndex ? 1.1 : 0.9
+                          })`,
+                          marginTop: index === selectedIndex ? "-2rem" : "0",
+                          opacity: index === selectedIndex ? 1 : 0.7,
+                          transition: "all 0.3s ease-in-out",
+                        }}
+                      >
+                        <Card className="bg-white rounded-2xl shadow-lg overflow-hidden h-full">
+                          <CardContent className="p-6 md:p-8 flex flex-col h-full">
+                            <div className="flex-grow">
+                              <Bird className="h-8 w-8 md:h-10 md:w-10 text-amber-400 mb-4 md:mb-6" />
+                              <p className="mb-4 md:mb-6 italic text-lg md:text-xl text-sky-700 leading-relaxed">
+                                &quot;{review.quote}&quot;
+                              </p>
+                            </div>
+                            <p className="text-right font-medium text-sky-600 text-base md:text-lg">
+                              - {review.author}
+                            </p>
+                          </CardContent>
+                        </Card>
+                      </div>
                     </div>
-                    <p className="text-right font-medium text-sky-600">
-                      - {testimonial.author}
-                    </p>
-                  </CardContent>
-                </Card>
+                  ))}
+                </div>
+              </div>
+              <Button
+                variant="outline"
+                size="icon"
+                className="absolute left-[-20px] top-1/2 transform -translate-y-1/2 bg-white shadow-md hover:bg-sky-100"
+                onClick={() => emblaApi?.scrollPrev()}
+              >
+                <ChevronLeft className="h-6 w-6" />
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                className="absolute right-[-20px] top-1/2 transform -translate-y-1/2 bg-white shadow-md hover:bg-sky-100"
+                onClick={() => emblaApi?.scrollNext()}
+              >
+                <ChevronRight className="h-6 w-6" />
+              </Button>
+            </div>
+            <div className="flex justify-center mt-8">
+              {scrollSnaps.map((_, index) => (
+                <button
+                  key={index}
+                  className={`h-3 w-3 rounded-full mx-1 ${
+                    index === selectedIndex ? "bg-sky-500" : "bg-sky-200"
+                  }`}
+                  onClick={() => emblaApi?.scrollTo(index)}
+                />
               ))}
             </div>
           </div>
