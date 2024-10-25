@@ -361,24 +361,25 @@ export function CreativeLandingPageComponent() {
                 <address className="not-italic space-y-4 text-lg text-sky-600">
                   <p className="flex items-center">
                     <MapPin className="mr-3 h-6 w-6 text-amber-400" />
-                    123 Whispering Willow Lane, Nestville, NV 12345
+                    303 Ranchridge Bay NW, Calgary
                   </p>
                   <p className="flex items-center">
                     <Phone className="mr-3 h-6 w-6 text-amber-400" />
-                    (555) CHIRP-CHIRP
+                    (403) 293-2961
                   </p>
-                  <p className="flex items-center">
+                  {/* <p className="flex items-center">
                     <Mail className="mr-3 h-6 w-6 text-amber-400" />
-                    hello@littlebirdsdayhome.com
-                  </p>
+                    info@littlebirdsdayhome.com
+                  </p> */}
                 </address>
                 <div className="mt-8 h-64 relative rounded-2xl overflow-hidden shadow-lg">
-                  <Image
-                    src="/placeholder.svg?height=300&width=400"
-                    alt="Map to Little Birds Day Home"
-                    layout="fill"
-                    objectFit="cover"
-                  />
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d160454.89548583867!2d-114.3439488303065!3d51.06956112739282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537169595ddd680d%3A0xa3a47dbc204531a1!2sLittle%20Birds%20Dayhome!5e0!3m2!1sen!2sca!4v1729825199072!5m2!1sen!2sca"
+                    width="100%"
+                    height="100%"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
                 </div>
               </div>
             </div>
