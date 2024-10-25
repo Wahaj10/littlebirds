@@ -60,33 +60,48 @@ export function CreativeLandingPageComponent() {
   const reviews = [
     {
       quote:
-        "Little Birds has become our daughter's favorite place! The creativity and care are truly magical.",
-      author: "Sarah, Hummingbird Mom",
+        "I almost don’t want to leave a review because then very quickly this dayhome will have a long wait list and then I wouldn’t be able to send my second child here haha!\
+        I cannot say enough good things about Little Birds. Shabnam is experienced, knowledgeable, flexible, super patient, and always provided nutritious homemade food for the kids. Like another parent said, she treats the kids as if they were her own.\
+        I had sent my child to both daycare and other dayhomes, and the quality of care my child receives at Little Birds is just incomparable. We are so lucky to have matched up with Shabnam. My child loves Shabnam and her family:).",
+      author: "Kait Chang",
     },
     {
       quote:
-        "As working parents, we couldn't ask for a better 'home away from home' for our son. He's thriving!",
-      author: "Mark & Lisa, Owl Parents",
+        "My husband and I feel so lucky to have found such a wonderful dayhome for our son. At Little Birds Dayhome, we know he is eating good food, learning, playing and getting lots of outdoor time when the weather permits. Most importantly we know he is well taken care of. He’s happy to arrive and\
+         always has lots to say about his day when we pick him up. We are very grateful for Little Birds!",
+      author: "Megan Mitchell",
     },
     {
       quote:
-        "The staff's dedication to nurturing each child's unique talents is impressive. Our little one has blossomed!",
-      author: "Emily, Robin Mom",
+        "Shabnam's dayhome is the best out of the few we tried. It has everything we were looking for: healthy \
+        homemade meals, daily outdoor play, plenty of crafts and great communications between the provider and the parents.\
+         I really love the pictures and videos of the kids doing various activities that she sends. Shabnam is a great educator\
+          and my daughter's English improved from just a few words when she started to fluent English after just 2 months. She prepares\
+           her for Kindergarten teaching her alphabet and counting. Very soon, I will be sending my second daughter to the same dayhome.",
+      author: "Kamila Klimsa",
     },
     {
       quote:
-        "The themed learning activities are so engaging. Our twins can't wait for their Little Birds adventures each day!",
-      author: "David, Sparrow Dad",
+        "My family recently moved from BC. We knew that finding a great daycare / dayhome for our child wouldn't be an easy task. We were SO glad that there was a space at Shabnam's Little Birds Dayhome. My son didn't really get along with any kids at his previous daycare so we were slight concerned and nervous about the transition.\
+        \
+        It's been almost 2 months now as I write this review. Our son is doing AMAZING. He actually enjoys going to his dayhome and is always happy. He is starting to play with other children and listens to Shabnam. We are so thankful and glad that our child goes to Shabnam's dayhome.\
+        \
+        If you are looking for a dayhome for your child, I 100% recommend Shabnam.\
+        ",
+      author: "Kevin Han",
     },
     {
       quote:
-        "We love how the program balances fun and education. It's the perfect nest for curious minds to grow.",
-      author: "Sophia, Bluebird Mom",
+        "We've been sending our son to this day home since he was 18 months. He is now 3 years old. He surprises us constantly with new skills and language learned. Shabnam is so patient, nurturing and a great educator to all the kids. She keeps them busy learning and playing all day and he sleeps so much better after a day at her day home. She follows the healthy eating guidelines and he always trying something new.\
+        She sends us daily photos and we receive monthly updates from the Childcare Society.\
+        If you are searching for a day home and want peace of mind that your little one is safe, happy and healthy, then look no further than Little Birds Day Home.",
+      author: "Tracy Spence",
     },
     {
       quote:
-        "The sense of community at Little Birds is wonderful. It feels like one big, happy flock!",
-      author: "James, Cardinal Dad",
+        "My son was having a very difficult time at daycare, so we pulled him out and put him in this dayhome, best decision ever! he is so happy now and looks forward to going everyday. Shabnam is lovely and patient,  you can tell she is very experienced\
+         and cares greatly for the kids. Highly recommend Little Birds Dayhome",
+      author: "Annie Wang",
     },
   ];
 
